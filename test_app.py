@@ -8,7 +8,6 @@ def test_root_endpoint():
     resp = client.get("/")
     assert resp.status_code == 200
     assert resp.json() == {"message": "hello world again"}
-    assert False
 
 def test_users_endpoint():
     resp = client.get("/users/1")
