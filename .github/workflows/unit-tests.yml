@@ -23,12 +23,14 @@ jobs:
     - name: Test with pytest
       run: |
         flake8
+
   build:
     strategy:
       matrix:
         python-version: ['3.7', '3.8', '3.9', '3.10']
         os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
+    needs: [style]
 
     steps:
     - uses: actions/checkout@v2
