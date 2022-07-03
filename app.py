@@ -35,11 +35,11 @@ def create_item(item: Item):
 
 @app.get("/sleep_slow")
 def sleep_slow():
-    r = time.sleep(1)
+    _ = time.sleep(1)
     return {"status": "done"}
 
 
 @app.get("/sleep_fast")
 async def sleep_fast():
-    r = await asyncio.sleep(1)
+    _ = await asyncio.sleep(1)
     return {"status": "done"}
